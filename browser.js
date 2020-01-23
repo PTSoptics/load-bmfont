@@ -1,3 +1,4 @@
+var Buffer = require('buffer').Buffer
 var xhr = require('xhr')
 var noop = function(){}
 var parseASCII = require('parse-bmfont-ascii')
@@ -30,7 +31,7 @@ module.exports = function(opt, cb) {
     if (!body)
       return cb(new Error('no body result'))
 
-    var binary = false 
+    var binary = false
 
     //if the response type is an array buffer,
     //we need to convert it into a regular Buffer object
@@ -44,9 +45,9 @@ module.exports = function(opt, cb) {
     if (isBinaryFormat(body)) {
       binary = true
       //if we have a string, turn it into a Buffer
-      if (typeof body === 'string') 
+      if (typeof body === 'string')
         body = new Buffer(body, 'binary')
-    } 
+    }
 
     //we are not parsing a binary format, just ASCII/XML/etc
     if (!binary) {
@@ -84,7 +85,7 @@ function getBinaryOpts(opt) {
   //IE10+ and other modern browsers support array buffers
   if (xml2)
     return xtend(opt, { responseType: 'arraybuffer' })
-  
+
   if (typeof self.XMLHttpRequest === 'undefined')
     throw new Error('your browser does not support XHR loading')
 
