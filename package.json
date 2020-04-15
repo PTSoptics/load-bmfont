@@ -1,6 +1,6 @@
 {
-  "name": "load-bmfont",
-  "version": "1.4.1",
+  "name": "@ptsoptics/load-bmfont",
+  "version": "1.4.2",
   "description": "loads a BMFont file in Node and the browser",
   "main": "index.js",
   "browser": "browser.js",
@@ -46,7 +46,10 @@
   ],
   "repository": {
     "type": "git",
-    "url": "git://github.com/Jam3/load-bmfont.git"
+    "url": "git://github.com/PTSoptics/load-bmfont.git"
+  },
+  "publishConfig": {
+    "registry": "https://npm.pkg.github.com"
   },
   "homepage": "https://github.com/Jam3/load-bmfont",
   "bugs": {
